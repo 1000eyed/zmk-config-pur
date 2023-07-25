@@ -1,6 +1,6 @@
-if SHIELD_TUBETEST
+if SHIELD_PUR
 
-config ZMK_PUR
+config ZMK_KEYBOARD_NAME
     default "pur"
 
 endif
