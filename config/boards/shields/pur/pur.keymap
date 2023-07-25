@@ -8,6 +8,13 @@
 #define QWERTY 0
 #define BT 1
 
+
+&sk {
+    release-after-ms = <800>;
+    quick-release;
+};
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
