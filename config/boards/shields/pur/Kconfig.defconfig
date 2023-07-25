@@ -1,0 +1,6 @@
+if SHIELD_TUBETEST
+
+config ZMK_PUR
+    default "pur"
+
+endif
