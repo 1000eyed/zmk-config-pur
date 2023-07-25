@@ -10,6 +10,8 @@
 
 #define COMBO_TERM_COMMON 40
 
+ZMK_COMBO(tab,      &kp TAB,        12 13,          ALL, COMBO_TERM_COMMON)
+
 / {
     combos {
         compatible = "zmk,combos";
