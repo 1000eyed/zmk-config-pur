@@ -1,2 +1,2 @@
 config SHIELD_PUR
-    def_bool $(shields_list_contains, pur)
+    def_bool $(shields_list_contains,pur)
