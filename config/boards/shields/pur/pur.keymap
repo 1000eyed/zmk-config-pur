@@ -3,11 +3,12 @@
 #include <dt-bindings/zmk/bt.h>
 
 #include "../../../../zmk-nodefree-config/helper.h"
-#include "combos.dtsi"
 
 #define QWERTY 0
 #define COLEMAK 1
 #define BT 2
+
+#include "combos.dtsi"
 
 
 &sk {
