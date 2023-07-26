@@ -28,8 +28,8 @@ ZMK_BEHAVIOR(qexcl, mod_morph, bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_
 
 
 /* layer switch dances */
-ZMK_BEHAVIOR(toqwerty, tap_dance, bindings = <0>, <0>, <&to COLEMAK>; tapping-term-ms = <200>;)
-ZMK_BEHAVIOR(tocolemak, tap_dance, bindings = <0>, <0>, <&to QWERTY>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(toqwerty, tap_dance, bindings = <&none>, <&none>, <&to COLEMAK>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(tocolemak, tap_dance, bindings = <&none>, <&none>, <&to QWERTY>; tapping-term-ms = <200>;)
 
 
 
