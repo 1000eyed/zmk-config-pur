@@ -15,6 +15,10 @@
 };
 
 
+ZMK_BEHAVIOR(lparchev, mod_morph, bindings = <&kp LPAR>, <&kp LT>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(rparchev, mod_morph, bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_LSFT)>;)
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
