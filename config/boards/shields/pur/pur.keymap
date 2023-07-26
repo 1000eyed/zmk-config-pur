@@ -6,7 +6,8 @@
 #include "combos.dtsi"
 
 #define QWERTY 0
-#define BT 1
+#define COLEMAK 1
+#define BT 2
 
 
 &sk {
@@ -14,11 +15,22 @@
     quick-release;
 };
 
-
+/* parentheses, braces, brackets, chevrons morphs */
 ZMK_BEHAVIOR(lparchev, mod_morph, bindings = <&kp LPAR>, <&kp LT>; mods = <(MOD_LSFT)>;)
 ZMK_BEHAVIOR(rparchev, mod_morph, bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_LSFT)>;)
 ZMK_BEHAVIOR(lbrkbrc, mod_morph, bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD_LSFT)>;)
 ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp GBRC>; mods = <(MOD_LSFT)>;)
+
+
+/* symbol morphs */
+ZMK_BEHAVIOR(qexcl, mod_morph, bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT)>;)
+
+
+/* layer switch dances */
+ZMK_BEHAVIOR(toqwerty, tap_dance, bindings = <0>, <0>, <&to COLEMAK>; tapping_term_ms = <200>;)
+ZMK_BEHAVIOR(tocolemak, tap_dance, bindings = <0>, <0>, <&to QWERTY>; tapping_term_ms = <200>;)
+
+
 
 / {
     keymap {
@@ -29,8 +41,18 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp GBRC>; mods = <(MOD
             bindings = <
     &kp ESC
     &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I     &kp O     &kp P
-    &kp A        &kp S        &kp D        &kp F        &kp G     &kp H     &kp J    &kp K     &kp L     &kp SEMI
-    &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &kp COMMA &kp DOT   &kp SLASH
+    &kp A        &kp S        &kp D        &kp F        &kp G     &kp H     &kp J    &kp K     &kp L     &kp SQT
+    &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &kp COMMA &kp DOT   &qexcl
+    &kp LCTRL    &kp LGUI     &kp LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp RCTRL
+            >;
+        };
+        COLEMAK{
+            label = "colemak";
+            bindings = <
+    &kp ESC
+    &kp Q        &kp W        &kp F        &kp P        &kp B     &kp J     &kp L    &kp U     &kp Y     &kp SQT
+    &kp A        &kp R        &kp S        &kp T        &kp G     &kp M     &kp N    &kp E     &kp I     &kp O
+    &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &kp COMMA &kp DOT   &qexcl
     &kp LCTRL    &kp LGUI     &kp LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp RCTRL
             >;
         };

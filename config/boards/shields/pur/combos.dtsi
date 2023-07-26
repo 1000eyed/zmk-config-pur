@@ -13,6 +13,9 @@
 #define COMBO_TERM_COMMON 40
 
 
+
+/* symbol combos */
+
 /* Horizontal combos - left hand */
 ZMK_COMBO(esc,      &kp ESC,          2 3,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(enter,    &kp ENTER,        3 4,          ALL, COMBO_TERM_COMMON)
@@ -24,10 +27,10 @@ ZMK_COMBO(paste,    &kp LS(INS),    23 24,          ALL, COMBO_TERM_COMMON)
 /* Horizontal combos - right hand */
 ZMK_COMBO(bspc,     &kp BSPC,         7 8,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(del,      &kp DEL,          8 9,          ALL, COMBO_TERM_COMMON)
-zmk_combo(com_lpc,  &lparchev,      17 18,          ALL, combo_term_common)
-zmk_combo(com_rpc,  &rparchev,      18 19,          ALL, combo_term_common)
-zmk_combo(com_lbb,  &lbrkbrc,       17 18,          ALL, combo_term_common)
-zmk_combo(com_rbb,  &rbrkbrc,       18 19,          ALL, combo_term_common)
+ZMK_COMBO(com_lpc,  &lparchev,      17 18,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(com_rpc,  &rparchev,      18 19,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(com_lbb,  &lbrkbrc,       17 18,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(com_rbb,  &rbrkbrc,       18 19,          ALL, COMBO_TERM_COMMON)
 
 
 /* Vertical combos - left hand */
@@ -51,3 +54,8 @@ ZMK_COMBO(under,    &kp UNDER,      16 26,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(minus,    &kp MINUS,      17 27,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(fslh,     &kp FSLH,       18 28,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(pipe,     &kp PIPE,       19 29,          ALL, COMBO_TERM_COMMON)
+
+
+/* layer combos */
+ZMK_COMBO(toqwer,   &toqwerty,      7 8 9,      COLEMAK, COMBO_TERM_COMMON)
+ZMK_COMBO(tocole,   &tocolemak,     7 8 9,       QWERTY, COMBO_TERM_COMMON)
