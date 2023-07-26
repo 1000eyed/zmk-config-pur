@@ -57,5 +57,5 @@ ZMK_COMBO(pipe,     &kp PIPE,       19 29,          ALL, COMBO_TERM_COMMON)
 
 
 /* layer combos */
-ZMK_COMBO(toqwer,   &toqwerty,      7 8 9,      COLEMAK, COMBO_TERM_COMMON)
-ZMK_COMBO(tocole,   &tocolemak,     7 8 9,       QWERTY, COMBO_TERM_COMMON)
+ZMK_COMBO(toqwer,   &to QWERTY,     7 8 9,      COLEMAK, COMBO_TERM_COMMON)
+ZMK_COMBO(tocole,   &to COLEMAK,    7 8 9,       QWERTY, COMBO_TERM_COMMON)
