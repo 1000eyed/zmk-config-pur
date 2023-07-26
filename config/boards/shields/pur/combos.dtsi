@@ -24,6 +24,8 @@ ZMK_COMBO(paste,    &kp LS(INS),    23 24,          ALL, COMBO_TERM_COMMON)
 /* Horizontal combos - right hand */
 ZMK_COMBO(bspc,     &kp BSPC,         7 8,          ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(del,      &kp DEL,          8 9,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(com_lpc,  &lparchev,      17 18,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(com_rpc,  &rparchev,      18 19,          ALL, COMBO_TERM_COMMON)
 
 
 /* Vertical combos - left hand */
