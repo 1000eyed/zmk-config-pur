@@ -6,7 +6,8 @@
 
 #define QWERTY 0
 #define COLEMAK 1
-#define BT 2
+#define NUM 2
+#define BT 3
 
 #include "combos.dtsi"
 
@@ -34,7 +35,6 @@ ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD
 /*ZMK_BEHAVIOR(tocolemak, tap_dance, bindings = <&none>, <&none>, <&to QWERTY>; tapping-term-ms = <200>;)*/
 
 
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -57,6 +57,16 @@ ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD
     &kp A        &kp R        &kp S        &kp T        &kp G     &kp M     &kp N    &kp E     &kp I     &kp O
     &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &comsemi  &dotcolo  &qexcl
     &kp LCTRL    &kp LGUI     &kp LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp RCTRL
+            >;
+        };
+        NUM{
+            label = "numbers";
+            bindings = <
+    &kp ESC
+    &trans       &kp N7       &kp N8       &trans       &trans    &trans    &trans   &trans    &trans    &trans
+    &kp N0       &kp N4       &kp N5       &kp N6       &trans    &trans    &trans   &trans    &trans    &trans
+    &trans       &kp N1       &kp N2       &kp N3       &trans    &trans    &trans   &trans    &trans    &trans
+    &trans       &trans       &trans                    &trans    &trans             &mo BT    &trans    &trans
             >;
         };
         BT {
