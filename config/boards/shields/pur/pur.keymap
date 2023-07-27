@@ -7,7 +7,8 @@
 #define QWERTY 0
 #define COLEMAK 1
 #define NUM 2
-#define BT 3
+#define FUNC 3
+#define BT 4
 
 #include "combos.dtsi"
 
@@ -34,9 +35,20 @@ ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD
 /*ZMK_BEHAVIOR(toqwerty, tap_dance, bindings = <&none>, <&none>, <&to COLEMAK>; tapping-term-ms = <200>;)*/
 /*ZMK_BEHAVIOR(tocolemak, tap_dance, bindings = <&none>, <&none>, <&to QWERTY>; tapping-term-ms = <200>;)*/
 ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-term-ms = <200>;)
+
+/* existing behavior settings */
+&sk {
+    release-after-ms = <800>;
+    quick-release;
+};
+
 &num_word {
     layers = <NUM>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+};
+
+&sl {
+    ignore-modifiers;
 };
 
 
@@ -51,7 +63,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I     &kp O     &kp P
     &kp A        &kp S        &kp D        &kp F        &kp G     &kp H     &kp J    &kp K     &kp L     &kp SQT
     &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &comsemi  &dotcolo  &qexcl
-    &kp LCTRL    &kp LGUI     &kp LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp RCTRL
+    &sk LCTRL    &sk LGUI     &sk LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp K_CANCEL
             >;
         };
         COLEMAK{
@@ -61,7 +73,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &kp Q        &kp W        &kp F        &kp P        &kp B     &kp J     &kp L    &kp U     &kp Y     &kp SQT
     &kp A        &kp R        &kp S        &kp T        &kp G     &kp M     &kp N    &kp E     &kp I     &kp O
     &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &comsemi  &dotcolo  &qexcl
-    &kp LCTRL    &kp LGUI     &kp LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp RCTRL
+    &sk LCTRL    &sk LGUI     &sk LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp K_CANCEL
             >;
         };
         NUM{
@@ -74,6 +86,16 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &trans       &trans       &trans                    &trans    &trans             &mo BT    &trans    &trans
             >;
         };
+        FUNC{
+            label = "func";
+            bindings = <
+    &kp ESC
+    &kp F12      &kp F7       &kp F8       &kp F9       &trans    &trans    &trans   &trans    &trans    &trans
+    &kp F11      &kp F4       &kp F5       &kp F6       &trans    &trans    &trans   &trans    &trans    &trans
+    &kp F10      &kp F1       &kp F2       &kp F3       &trans    &trans    &trans   &trans    &trans    &trans
+    &trans       &trans       &trans                    &kp CAPS  &trans             &mo BT    &trans    &trans
+            >;
+        };
         BT {
             label = "ble";
             bindings = <
@@ -81,7 +103,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none     &none     &none    &none     &none     &bt BT_CLR
     &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
     &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
-    &none        &none        &none                     &kp CAPS  &none              &none     &none     &none
+    &none        &none        &none                     &none     &none              &none     &none     &none
             >;
         };
     };
