@@ -57,6 +57,6 @@ ZMK_COMBO(pipe,     &kp PIPE,       19 29,          ALL, COMBO_TERM_COMMON)
 
 
 /* layer combos */
-ZMK_COMBO(toqwer,   &to QWERTY,  1 4 7 10,      COLEMAK, COMBO_TERM_COMMON)
-ZMK_COMBO(tocole,   &to COLEMAK, 1 4 7 10,       QWERTY, COMBO_TERM_COMMON)
-ZMK_COMBO(tognum,   &tog NUM,         2 4,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(toqwer,   &to QWERTY,  1 4 7 10,        COLEMAK, COMBO_TERM_COMMON)
+ZMK_COMBO(tocole,   &to COLEMAK, 1 4 7 10,         QWERTY, COMBO_TERM_COMMON)
+ZMK_COMBO(tognum,   &num_dance,       2 4, COLEMAK QWERTY, COMBO_TERM_COMMON)

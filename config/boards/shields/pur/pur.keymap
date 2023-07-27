@@ -33,6 +33,11 @@ ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD
 /* layer switch dances */
 /*ZMK_BEHAVIOR(toqwerty, tap_dance, bindings = <&none>, <&none>, <&to COLEMAK>; tapping-term-ms = <200>;)*/
 /*ZMK_BEHAVIOR(tocolemak, tap_dance, bindings = <&none>, <&none>, <&to QWERTY>; tapping-term-ms = <200>;)*/
+ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-term-ms = <200>;)
+&num_word {
+    layers = <NUM>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+};
 
 
 / {
@@ -76,7 +81,7 @@ ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none     &none     &none    &none     &none     &bt BT_CLR
     &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
     &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
-    &none        &none        &none                     &none     &none              &none     &none     &none
+    &none        &none        &none                     &kp CAPS  &none              &none     &none     &none
             >;
         };
     };
