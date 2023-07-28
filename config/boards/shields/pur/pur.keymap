@@ -8,7 +8,8 @@
 #define COLEMAK 1
 #define NUM 2
 #define FUNC 3
-#define BT 4
+#define NAV 4
+#define BT 5
 
 #include "combos.dtsi"
 
@@ -95,6 +96,16 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &kp F11      &kp F4       &kp F5       &kp F6       &trans    &trans    &trans   &trans    &trans    &trans
     &kp F10      &kp F1       &kp F2       &kp F3       &trans    &trans    &trans   &trans    &trans    &trans
     &trans       &trans       &trans                    &kp CAPS  &trans             &mo BT    &trans    &trans
+            >;
+        };
+        NAV{
+            label = "nav";
+            bindings = <
+    &kp ESC
+    &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
+    &none        &none        &kp C_PREV   &kp C_PREV   &none     &none     &none    &none     &none     &none
+    &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
+    &none        &none        &none                     &none     &none              &none     &none     &tog NAV
             >;
         };
         BT {
