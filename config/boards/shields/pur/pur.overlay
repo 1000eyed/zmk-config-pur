@@ -44,3 +44,7 @@
         >;
     };
 };
+
+&encoder_main {
+    status = "okay";
+};
