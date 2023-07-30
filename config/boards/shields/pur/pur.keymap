@@ -13,9 +13,6 @@
 
 #include "combos.dtsi"
 
-/* encoder bindings */
-sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-
 &sk {
     release-after-ms = <800>;
     quick-release;
@@ -69,6 +66,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &comsemi  &dotcolo  &qexcl
     &sk LCTRL    &kp LGUI     &sk LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp K_CANCEL
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         COLEMAK{
             label = "colemak";
@@ -79,6 +77,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &comsemi  &dotcolo  &qexcl
     &sk LCTRL    &kp LGUI     &sk LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp K_CANCEL
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         NUM{
             label = "numbers";
