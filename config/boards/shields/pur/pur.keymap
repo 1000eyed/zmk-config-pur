@@ -97,7 +97,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &kp ESC
     &none        &none        &none        &none        &none     &kp HOME              &kp PG_DN        &kp PG_UP          &kp END               &none
     &none        &none        &none        &none        &none     &kp LEFT              &kp DOWN         &kp UP             &kp RIGHT             &none
-    &none        &none        &none        &none        &none     &kp LC(LA(LS(LEFT)))  &kp LC(LA(LEFT)) &kp LC(LA(RIGHT))  &kp LC(LA(LS(LEFT)))  &none
+    &none        &none        &none        &none        &none     &kp LC(LA(LS(LEFT)))  &kp LC(LA(LEFT)) &kp LC(LA(RIGHT))  &kp LC(LA(LS(RIGHT))) &none
     &trans       &trans       &trans                    &trans    &trans                                 &mo BT             &trans                &tog NAV
             >;
         };
