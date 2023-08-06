@@ -100,6 +100,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-t
     &none        &none        &none        &none        &none     &kp LC(LA(LS(LEFT)))  &kp LC(LA(LEFT)) &kp LC(LA(RIGHT))  &kp LC(LA(LS(RIGHT))) &none
     &trans       &trans       &trans                    &trans    &trans                                 &mo BT             &trans                &tog NAV
             >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
         BT {
             label = "ble";
