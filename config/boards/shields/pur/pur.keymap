@@ -2,23 +2,108 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#include "../../../../zmk-nodefree-config/helper.h"
+
 #define QWERTY 0
-#define BT 1
+#define COLEMAK 1
+#define NUM 2
+#define FUNC 3
+#define NAV 4
+#define BT 5
+
+#include "combos.dtsi"
+
+&sk {
+    release-after-ms = <800>;
+    quick-release;
+};
+
+/* parentheses, braces, brackets, chevrons morphs */
+ZMK_BEHAVIOR(lparchev, mod_morph, bindings = <&kp LPAR>, <&kp LT>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(rparchev, mod_morph, bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(lbrkbrc, mod_morph, bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_LSFT)>;)
+
+
+/* symbol morphs */
+ZMK_BEHAVIOR(qexcl, mod_morph, bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(comsemi, mod_morph, bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT)>;)
+
+/* caps word morph */
+ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSFT>, <&caps_word>; mods = <(MOD_LSFT)>;)
+
+
+/* layer switch dances */
+ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&num_word>, <&tog NUM>; tapping-term-ms = <200>;)
+
+/* existing behavior settings */
+&caps_word { /delete-property/ ignore-modifiers;};
+&sk {release-after-ms = <2000>; quick-release;};
+&num_word { layers = <NUM>; continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>; };
+&sl { ignore-modifiers; release-after-ms = <10000>; };
+&lt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; global-quick-tap-ms = <200>; };
+
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         QWERTY {
+            label = "qwerty";
             bindings = <
     &kp ESC
     &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I     &kp O     &kp P
-    &kp A        &kp S        &kp D        &kp F        &kp G     &kp H     &kp J    &kp K     &kp L     &kp SEMI
-    &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &kp COMMA &kp DOT   &kp SLASH
-    &kp LCTRL    &kp LGUI     &kp LALT                  &kp SPACE &sk LSFT           &mo BT    &kp RGUI  &kp RCTRL
+    &kp A        &lt NAV S    &kp D        &kp F        &kp G     &kp H     &kp J    &kp K     &kp L     &kp SQT
+    &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &comsemi  &dotcolo  &qexcl
+    &sk LCTRL    &kp LGUI     &sk LALT                  &kp SPACE &smart_shft        &mo BT    &kp RGUI  &kp K_CANCEL
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+        COLEMAK{
+            label = "colemak";
+            bindings = <
+    &kp ESC
+    &kp Q        &kp W        &kp F        &kp P        &kp B     &kp J     &kp L    &kp U     &kp Y     &kp SQT
+    &kp A        &lt NAV R    &kp S        &kp T        &kp G     &kp M     &kp N    &kp E     &kp I     &kp O
+    &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &comsemi  &dotcolo  &qexcl
+    &sk LCTRL    &kp LGUI     &sk LALT                  &kp SPACE &smart_shft        &mo BT    &kp RGUI  &kp K_CANCEL
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+        NUM{
+            label = "numbers";
+            bindings = <
+    &kp ESC
+    &trans       &kp N7       &kp N8       &kp N9       &trans    &trans    &trans   &trans    &trans    &trans
+    &kp N0       &kp N4       &kp N5       &kp N6       &trans    &trans    &trans   &trans    &trans    &trans
+    &trans       &kp N1       &kp N2       &kp N3       &trans    &trans    &trans   &trans    &trans    &trans
+    &trans       &trans       &trans                    &trans    &trans             &mo BT    &trans    &tog NUM
             >;
         };
+        FUNC{
+            label = "func";
+            bindings = <
+    &kp ESC
+    &kp F12      &kp F7       &kp F8       &kp F9       &trans    &trans    &trans   &trans    &trans    &trans
+    &kp F11      &kp F4       &kp F5       &kp F6       &trans    &trans    &trans   &trans    &trans    &trans
+    &kp F10      &kp F1       &kp F2       &kp F3       &trans    &trans    &trans   &trans    &trans    &trans
+    &trans       &trans       &trans                    &kp CAPS  &trans             &mo BT    &trans    &trans
+            >;
+        };
+        NAV{
+            label = "nav";
+            bindings = <
+    &kp ESC
+    &none        &none        &none        &none        &none     &kp HOME              &kp PG_DN        &kp PG_UP          &kp END               &none
+    &none        &none        &none        &none        &none     &kp LEFT              &kp DOWN         &kp UP             &kp RIGHT             &none
+    &none        &none        &none        &none        &none     &kp LC(LA(LS(LEFT)))  &kp LC(LA(LEFT)) &kp LC(LA(RIGHT))  &kp LC(LA(LS(RIGHT))) &none
+    &trans       &trans       &trans                    &trans    &trans                                 &mo BT             &trans                &tog NAV
+            >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+        };
         BT {
+            label = "ble";
             bindings = <
     &bootloader
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none     &none     &none    &none     &none     &bt BT_CLR
