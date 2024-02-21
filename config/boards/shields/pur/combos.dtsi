@@ -8,7 +8,7 @@
   ╰────────────────╯ ╰────────────────╯
  */
 #undef COMBO_HOOK
-#define COMBO_HOOK global-quick-tap-ms = <200>;
+#define COMBO_HOOK require-prior-idle-ms = <200>;
 
 #define COMBO_TERM_COMMON 40
 
