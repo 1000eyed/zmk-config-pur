@@ -31,12 +31,12 @@ ZMK_BEHAVIOR(comsemi, mod_morph, bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MO
 ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT)>;)
 
 /* caps word morph */
-ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&kp LSFT>, <&kp CAPS>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSFT>, <&kp CAPS>; mods = <(MOD_LSFT)>;)
 
 /* layer switch dances */
 ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&sl NUM>, <&tog NUM>; tapping-term-ms = <200>;)
 ZMK_BEHAVIOR(smart_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
-ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&mt LALT LGUI>, <&kp LGUI>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&mt LALT LGUI>, <&kp LGUI>, <kp LS(LGUI)>; tapping-term-ms = <200>;)
 
 /* existing behavior settings */
 &sl { ignore-modifiers; release-after-ms = <10000>; };
