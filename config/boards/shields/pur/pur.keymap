@@ -51,10 +51,10 @@ ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&mt LALT LGUI>, <&kp LGUI>, <&kp 
             label = "qwerty";
             bindings = <
     &kp ESC
-    &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I     &kp O     &kp P
-    &kp A        &lt NAV S    &kp D        &kp F        &kp G     &kp H     &kp J    &kp K     &kp L     &kp SQT
-    &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &comsemi  &dotcolo  &qexcl
-    &smart_ctrl  &smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT    &kp RGUI  &kp K_CANCEL
+    &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I      &kp O     &kp P
+    &kp A        &lt NAV S    &kp D        &kp F        &kp G     &kp H     &kp J    &kp K      &kp L     &kp SEMI
+    &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &kp COMMA  &kp DOT   &kp SLASH
+    &smart_ctrl  &smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
@@ -62,10 +62,10 @@ ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&mt LALT LGUI>, <&kp LGUI>, <&kp 
             label = "colemak";
             bindings = <
     &kp ESC
-    &kp Q        &kp W        &kp F        &kp P        &kp B     &kp J     &kp L    &kp U     &kp Y     &kp SQT
-    &kp A        &lt NAV R    &kp S        &kp T        &kp G     &kp M     &kp N    &kp E     &kp I     &kp O
-    &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &comsemi  &dotcolo  &qexcl
-    &smart_ctrl  &smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT    &kp RGUI  &kp K_CANCEL
+    &kp Q        &kp W        &kp F        &kp P        &kp B     &kp J     &kp L    &kp U      &kp Y     &kp SEMI
+    &kp A        &lt NAV R    &kp S        &kp T        &kp G     &kp M     &kp N    &kp E      &kp I     &kp O
+    &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &kp COMMA  &kp DOT   &kp SLASH
+    &smart_ctrl  &smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
