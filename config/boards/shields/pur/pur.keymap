@@ -24,19 +24,13 @@ ZMK_BEHAVIOR(rparchev, mod_morph, bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_
 ZMK_BEHAVIOR(lbrkbrc, mod_morph, bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD_LSFT)>;)
 ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_LSFT)>;)
 
-
-/* symbol morphs */
-ZMK_BEHAVIOR(qexcl, mod_morph, bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT)>;)
-ZMK_BEHAVIOR(comsemi, mod_morph, bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT)>;)
-ZMK_BEHAVIOR(dotcolo, mod_morph, bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT)>;)
-
 /* caps word morph */
 ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSFT>, <&kp CAPS>; mods = <(MOD_LSFT)>;)
 
 /* layer switch dances */
 ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&sl NUM>, <&tog NUM>; tapping-term-ms = <200>;)
 ZMK_BEHAVIOR(smart_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
-ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&mt LALT LGUI>, <&kp LGUI>, <&kp LS(LGUI)>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&kp LGUI>, <&kp LGUI>; tapping-term-ms = <200>;)
 
 /* existing behavior settings */
 &sl { ignore-modifiers; release-after-ms = <10000>; };
@@ -54,7 +48,7 @@ ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&mt LALT LGUI>, <&kp LGUI>, <&kp 
     &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I      &kp O     &kp P
     &kp A        &lt NAV S    &kp D        &kp F        &kp G     &kp H     &kp J    &kp K      &kp L     &kp SEMI
     &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &kp COMMA  &kp DOT   &kp SLASH
-    &smart_ctrl  &smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
+    &mt LCTRL smart_ctrl  &mt LALT smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
@@ -95,7 +89,7 @@ ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&mt LALT LGUI>, <&kp LGUI>, <&kp 
     &kp ESC
     &none        &none        &none        &none        &none     &kp HOME  &kp LC(LEFT) &kp LC(RIGHT) &kp END       &none
     &none        &none        &none        &none        &none     &kp LEFT  &kp DOWN     &kp UP        &kp RIGHT     &none
-    &none        &none        &none        &none        &none     &kp LC(LA(LS(LEFT)))  &kp LC(LA(LEFT)) &kp LC(LA(RIGHT))  &kp LC(LA(LS(RIGHT))) &none
+    &none        &none        &none        &none        &none     &kp LS(HOME)  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT))  &kp LS(END) &none
     &trans       &trans       &trans                    &trans    &trans                 &mo BT        &trans        &tog NAV
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
