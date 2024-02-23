@@ -29,8 +29,12 @@ ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSFT>, <&kp CAPS>; mods = <(
 
 /* layer switch dances */
 ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&sl NUM>, <&tog NUM>; tapping-term-ms = <200>;)
-ZMK_BEHAVIOR(smart_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
-ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&kp LGUI>, <&kp LGUI>; tapping-term-ms = <200>;)
+
+/* smart modifiers */
+ZMK_BEHAVIOR(dance_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(dance_alt, tap_dance, bindings = <&kp LGUI>, <&kp LGUI>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(smart_ctrl, hold_tap, flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <125>; bindings = <&kp LCTRL>, <&dance_ctrl>;)
+ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <125>; bindings = <&kp LALT>, <&dance_alt>;)
 
 /* existing behavior settings */
 &sl { ignore-modifiers; release-after-ms = <10000>; };
@@ -48,7 +52,7 @@ ZMK_BEHAVIOR(smart_alt, tap_dance, bindings = <&kp LGUI>, <&kp LGUI>; tapping-te
     &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I      &kp O     &kp P
     &kp A        &lt NAV S    &kp D        &kp F        &kp G     &kp H     &kp J    &kp K      &kp L     &kp SEMI
     &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &kp COMMA  &kp DOT   &kp SLASH
-    &mt LCTRL smart_ctrl  &mt LALT smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
+    &smart_ctrl  &smart_alt   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
