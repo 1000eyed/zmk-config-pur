@@ -25,7 +25,7 @@ ZMK_BEHAVIOR(lbrkbrc, mod_morph, bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD
 ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_LSFT)>;)
 
 /* caps word morph */
-ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk LSFT>, <&kp CAPS>; mods = <(MOD_LSFT)>;)
+ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk RSFT>, <&kp CAPS>; mods = <(MOD_RSFT)>;)
 
 /* layer switch dances */
 ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&sl NUM>, <&tog NUM>; tapping-term-ms = <200>;)
@@ -33,13 +33,15 @@ ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&sl NUM>, <&tog NUM>; tapping-ter
 /* smart modifiers */
 ZMK_BEHAVIOR(dance_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
 ZMK_BEHAVIOR(dance_alt, tap_dance, bindings = <&kp LGUI>, <&kp LGUI>; tapping-term-ms = <200>;)
-ZMK_BEHAVIOR(smart_ctrl, hold_tap, flavor = "balanced"; tapping-term-ms = <200>; bindings = <&kp>, <&dance_ctrl>;)
-ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; tapping-term-ms = <200>; bindings = <&kp>, <&dance_alt>;)
+ZMK_BEHAVIOR(smart_ctrl, hold_tap, flavor = "balanced"; bindings = <&kp>, <&dance_ctrl>; tapping-term-ms = <200>; quick-tap-ms = <200>;)
+ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; bindings = <&kp>, <&dance_alt>; tapping-term-ms = <200>; quick-tap-ms = <200>;)
 
 /* existing behavior settings */
 &sl { ignore-modifiers; release-after-ms = <10000>; };
 &lt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; require-prior-idle-ms = <200>; };
 
+
+/* TODO: caps/caps word, quote, exclmark, alt (shift)tab*/
 
 / {
     keymap {
@@ -52,7 +54,7 @@ ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; tapping-term-ms = <200>; 
     &kp Q        &kp W        &kp E        &kp R        &kp T     &kp Y     &kp U    &kp I      &kp O     &kp P
     &kp A        &lt NAV S    &kp D        &kp F        &kp G     &kp H     &kp J    &kp K      &kp L     &kp SEMI
     &kp Z        &kp X        &kp C        &kp V        &kp B     &kp N     &kp M    &kp COMMA  &kp DOT   &kp SLASH
-    &smart_ctrl LCTRL 0  &smart_alt LALT 0   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
+    &smart_ctrl LCTRL 0 &kp LSFT &smart_alt LALT 0      &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
@@ -63,7 +65,7 @@ ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; tapping-term-ms = <200>; 
     &kp Q        &kp W        &kp F        &kp P        &kp B     &kp J     &kp L    &kp U      &kp Y     &kp SEMI
     &kp A        &lt NAV R    &kp S        &kp T        &kp G     &kp M     &kp N    &kp E      &kp I     &kp O
     &kp Z        &kp X        &kp C        &kp D        &kp V     &kp K     &kp H    &kp COMMA  &kp DOT   &kp SLASH
-    &smart_ctrl LCTRL 0  &smart_alt LALT 0   &kp LALT                  &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
+    &smart_ctrl LCTRL 0 &kp LSFT &smart_alt LALT 0      &kp SPACE &smart_shft        &mo BT     &kp RGUI  &kp K_CANCEL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
