@@ -27,6 +27,10 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD
 /* caps word morph */
 ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk RSFT>, <&kp CAPS>; mods = <(MOD_RSFT)>;)
 
+/* LALT morphs */
+ZMK_BEHAVIOR(alt_tab, mod_morph, bindings = <&kp A>, <&kp LA(TAB)>; mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_stab, mod_morph, bindings = <&kp A>, <&kp LA(LS(TAB))>; mods = <(MOD_LALT)>;)
+
 /* layer switch dances */
 ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&sl NUM>, <&tog NUM>; tapping-term-ms = <200>;)
 
@@ -105,7 +109,7 @@ ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; bindings = <&kp>, <&dance
             bindings = <
     &bootloader
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none     &none     &none    &none     &none     &bt BT_CLR
-    &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
+    &none        &none        &none        &none        &none     &none     &none    &none     &none     &kp SQT
     &none        &none        &none        &none        &none     &none     &none    &none     &none     &none
     &none        &none        &none                     &none     &none              &none     &none     &none
             >;
