@@ -28,8 +28,8 @@ ZMK_BEHAVIOR(rbrkbrc, mod_morph, bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD
 ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk RSFT>, <&kp CAPS>; mods = <(MOD_RSFT)>;)
 
 /* LALT morphs */
-ZMK_BEHAVIOR(alt_tab, mod_morph, bindings = <&kp A>, <&kp LA(TAB)>; mods = <(MOD_LALT)>;)
-ZMK_BEHAVIOR(alt_stab, mod_morph, bindings = <&kp A>, <&kp LA(LS(TAB))>; mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_tab, mod_morph, bindings = <&kp A>, <&kp TAB>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_stab, mod_morph, bindings = <&kp A>, <&kp LS(TAB)>; mods = <(MOD_LALT)>;)
 
 /* layer switch dances */
 ZMK_BEHAVIOR(num_dance, tap_dance, bindings = <&sl NUM>, <&tog NUM>; tapping-term-ms = <200>;)
