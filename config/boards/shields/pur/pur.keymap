@@ -33,7 +33,7 @@ ZMK_BEHAVIOR(alt_stab, mod_morph, bindings = <&kp S>, <&kp LS(TAB)>; mods = <(MO
 ZMK_BEHAVIOR(alt_rtab, mod_morph, bindings = <&kp R>, <&kp LS(TAB)>; mods = <(MOD_LALT)>;)
 
 /* num layer switch */
-ZMK_BEHAVIOR(num_dance, hold_tap, flavor = "balanced", bindings = <&sl NUM>, <&tog NUM>; tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(num_dance, hold_tap, flavor = "balanced", bindings = <&sl>, <&tog>; tapping-term-ms = <200>;)
 
 /* smart modifiers */
 ZMK_BEHAVIOR(dance_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
