@@ -60,6 +60,6 @@ ZMK_COMBO(pipe,     &kp PIPE,       19 29,          ALL, COMBO_TERM_COMMON)
 /* layer combos */
 ZMK_COMBO(toqwer,   &to QWERTY,  1 4 7 10,        COLEMAK, COMBO_TERM_COMMON)
 ZMK_COMBO(tocole,   &to COLEMAK, 1 4 7 10,         QWERTY, COMBO_TERM_COMMON)
-ZMK_COMBO(tognum,   &num_dance NAV NAV,     12 14,            ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(tognum,   &num_dance NUM NUM,     12 14,            ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(slfunc,   &sl FUNC,         2 4,            ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(tognav,   &tog NAV,       11 14,            ALL, COMBO_TERM_COMMON)
