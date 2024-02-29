@@ -12,7 +12,20 @@
 #define BT 5
 
 /* num layer switch */
-ZMK_BEHAVIOR(num_dance, hold_tap, flavor = "balanced", bindings = <&tog>, <&sl>;       tapping-term-ms = <200>; quick-tap-ms = <200>;)
+// ZMK_BEHAVIOR(num_dance, hold_tap, flavor = "balanced", bindings = <&tog>, <&sl>;       tapping-term-ms = <200>; quick-tap-ms = <200>;)
+
+/ {
+    behaviors {
+        num_dance: num_dance_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&tog>, <&sl>;
+        };
+    };
+};
 
 #include "combos.dtsi"
 
