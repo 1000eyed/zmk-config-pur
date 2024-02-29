@@ -45,7 +45,7 @@ ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; bindings = <&kp>, <&dance
 &lt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; require-prior-idle-ms = <200>; };
 
 
-/* TODO: caps/caps word, quote, exclmark, alt (shift)tab*/
+/* TODO: caps/caps word, quote, exclmark, alt (shift)tab, put switch to num layer on hold instead of double tap */
 
 / {
     keymap {
