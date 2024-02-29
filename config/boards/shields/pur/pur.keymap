@@ -20,7 +20,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&tog>, <&sl>;
         };
@@ -45,8 +45,8 @@ ZMK_BEHAVIOR(smart_shft, mod_morph, bindings = <&sk RSFT>, <&kp CAPS>; mods = <(
 
 /* LALT morphs */
 ZMK_BEHAVIOR(alt_tab, mod_morph, bindings = <&kp A>, <&kp TAB>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
-ZMK_BEHAVIOR(alt_stab, mod_morph, bindings = <&kp S>, <&kp LS(TAB)>; mods = <(MOD_LALT)>;)
-ZMK_BEHAVIOR(alt_rtab, mod_morph, bindings = <&kp R>, <&kp LS(TAB)>; mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_stab, mod_morph, bindings = <&kp S>, <&kp LS(TAB)>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
+ZMK_BEHAVIOR(alt_rtab, mod_morph, bindings = <&kp R>, <&kp LS(TAB)>; mods = <(MOD_LALT)>; keep-mods = <(MOD_LALT)>;)
 
 /* smart modifiers */
 ZMK_BEHAVIOR(dance_ctrl, tap_dance, bindings = <&kp LCTRL>, <&kp LC(LSFT)>; tapping-term-ms = <200>;)
