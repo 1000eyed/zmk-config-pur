@@ -20,7 +20,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            tapping-term-ms = <150>;
             quick-tap-ms = <200>;
             bindings = <&tog>, <&sl>;
         };
@@ -59,7 +59,7 @@ ZMK_BEHAVIOR(smart_alt, hold_tap, flavor = "balanced"; bindings = <&kp>, <&dance
 &lt { flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <200>; require-prior-idle-ms = <200>; };
 
 
-/* TODO: caps/caps word, quote, exclmark, alt (shift)tab, put switch to num layer on hold instead of double tap */
+/* TODO: caps/caps word, quote, exclmark */
 
 / {
     keymap {
