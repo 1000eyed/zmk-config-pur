@@ -11,6 +11,7 @@
 #define COMBO_HOOK require-prior-idle-ms = <200>;
 
 #define COMBO_TERM_COMMON 40
+#define COMBO_TERM_LONG 40
 
 
 
@@ -34,32 +35,35 @@ ZMK_COMBO(com_rbb,  &rbrkbrc,       28 29,          ALL, COMBO_TERM_COMMON)
 
 
 /* Vertical combos - left hand */
-ZMK_COMBO(at,       &kp AT,          2 12,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(hash,     &kp HASH,        3 13,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(dllr,     &kp DLLR,        4 14,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(prcnt,    &kp PRCNT,       5 15,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(at,       &kp AT,          2 12,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(hash,     &kp HASH,        3 13,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(dllr,     &kp DLLR,        4 14,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(prcnt,    &kp PRCNT,       5 15,          ALL, COMBO_TERM_LONG)
 
-ZMK_COMBO(grave,    &kp GRAVE,      12 22,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(bslh,     &kp BSLH,       13 23,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(equal,    &kp EQUAL,      14 24,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(tilde,    &kp TILDE,      15 25,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(ctrlz,    &kp LC(Z),      21 31,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(grave,    &kp GRAVE,      12 22,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(bslh,     &kp BSLH,       13 23,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(equal,    &kp EQUAL,      14 24,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(tilde,    &kp TILDE,      15 25,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(ctrlz,    &kp LC(Z),      21 31,          ALL, COMBO_TERM_LONG)
 
 /* Vertical combos - right hand */
-ZMK_COMBO(caret,    &kp CARET,       6 16,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(plus,     &kp PLUS,        7 17,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(star,     &kp STAR,        8 18,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(amps,     &kp AMPS,        9 19,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(caret,    &kp CARET,       6 16,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(plus,     &kp PLUS,        7 17,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(star,     &kp STAR,        8 18,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(amps,     &kp AMPS,        9 19,          ALL, COMBO_TERM_LONG)
 
-ZMK_COMBO(under,    &kp UNDER,      16 26,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(minus,    &kp MINUS,      17 27,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(fslh,     &kp FSLH,       18 28,          ALL, COMBO_TERM_COMMON)
-ZMK_COMBO(pipe,     &kp PIPE,       19 29,          ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(under,    &kp UNDER,      16 26,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(minus,    &kp MINUS,      17 27,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(fslh,     &kp FSLH,       18 28,          ALL, COMBO_TERM_LONG)
+ZMK_COMBO(pipe,     &kp PIPE,       19 29,          ALL, COMBO_TERM_LONG)
 
+/* special combos */
+ZMK_COMBO(rpipe,     &kp LC(LS(M)),  27 18 19,      ALL, COMBO_TERM_LONG)
+ZMK_COMBO(requal,    &kp LA(MINUS),  17  8  9,      ALL, COMBO_TERM_LONG)
 
 /* layer combos */
 ZMK_COMBO(toqwer,   &to QWERTY,  1 4 7 10,        COLEMAK, COMBO_TERM_COMMON)
 ZMK_COMBO(tocole,   &to COLEMAK, 1 4 7 10,         QWERTY, COMBO_TERM_COMMON)
-ZMK_COMBO(tognum,   &num_dance NUM NUM,     12 14,            ALL, COMBO_TERM_COMMON)
+ZMK_COMBO(tognum,   &num_dance NUM NUM,     12 14,    ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(slfunc,   &sl FUNC,         2 4,            ALL, COMBO_TERM_COMMON)
 ZMK_COMBO(tognav,   &tog NAV,       11 14,            ALL, COMBO_TERM_COMMON)
