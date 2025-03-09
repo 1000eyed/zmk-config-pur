@@ -10,7 +10,7 @@
 #define FUNC 3
 #define NAV 4
 #define BT 5
-
+ 
 /* num layer switch */
 // ZMK_BEHAVIOR(num_dance, hold_tap, flavor = "balanced", bindings = <&tog>, <&sl>;       tapping-term-ms = <200>; quick-tap-ms = <200>;)
 
